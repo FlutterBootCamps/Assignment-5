@@ -1,8 +1,6 @@
 # Airport Database System
 
-## Instructions
-
-Welcome to the Airport Database System lab! In this project, you will create a database system for managing airport-related data using Supabase.
+**In this project, you will create a database system for managing airport-related data using Supabase.**
 
 **Steps:**
 1. **Set Up Supabase Project:** Start by setting up a Supabase project.
