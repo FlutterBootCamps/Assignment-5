@@ -1,19 +1,17 @@
-# Supabase Authentication
+# Airport Database System
 
-## Description
-Create an authentication page using Supabase for user sign-up and sign-in functionalities in Flutter. Additionally, implement success and error pages to provide feedback to users after the authentication process.
+## Instructions
 
-## Requirements
-1. Implement sign-up and sign-in features using Supabase authentication APIs.
-2. Design a simple and user-friendly interface for the authentication page.
-3. Create a success page that appears when authentication is successful, indicating a successful login or sign-up process.
-4. Implement an error dialog or related ways to display error messages if the authentication process fails or encounters any issues.
+Welcome to the Airport Database System lab! In this project, you will create a database system for managing airport-related data using Supabase.
 
-## Submission Guidelines
-- Include a README file with setup instructions and documentation for your project.
-- Ensure your code is well-structured and follows Flutter development best practices.
+**Steps:**
+1. **Set Up Supabase Project:** Start by setting up a Supabase project.
+2. **Create Tables:** Use the provided ERD image to create tables in your Supabase database.
+3. **Define Relationships:** Establish relationships between tables based on the ERD image.
 
-## Deadline
-The deadline for submission is [insert deadline date].
 
-**Good Luck!**
+**Note:** Refer to the provided ERD image for table structure and relationships.
+
+
+
+![Airport system ERD](https://github.com/FlutterBootCamps/Assignment-5/assets/101333803/0830e7b8-f224-4155-aabe-5986dca103b1)
