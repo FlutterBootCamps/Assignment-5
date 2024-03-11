@@ -1,0 +1,107 @@
+create table
+  passengers (
+    id SERIAL primary key,
+    first_name varchar(50) not null,
+    last_name varchar(50) not null,
+    date_of_birth date not null,
+    country_of_citizenship varchar(50) not null,
+    country_of_residence varchar(50) not null,
+    passport_number varchar(20) not null,
+    created_at timestamp not null,
+    updated_at timestamp not null
+  );
+create table
+  security_check (
+    id SERIAL primary key,
+    check_result varchar(20) not null,
+    comments varchar(65535) not null,
+    created_at timestamp not null,
+    updated_at timestamp not null,
+    passenger_id bigint,
+    foreign key (passenger_id) references passengers (id)
+  );
+create table
+  airport (
+    id SERIAL primary key,
+    airport_name varchar(50) not null,
+    country varchar(50) not null,
+    state varchar(50) not null,
+    city varchar(50) not null,
+    created_at timestamp not null,
+    updated_at timestamp not null
+  );
+create table
+  airline (
+    id SERIAL primary key,
+    airline_code bigint not null,
+    airline_name varchar not null,
+    airline_country varchar(50) not null,
+    created_at timestamp not null,
+    updated_at timestamp not null
+  );
+
+create table
+  flight (
+    flight_id SERIAL primary key,
+    departing_gate varchar(20) not null,
+    arriving_gate varchar(20) not null,
+    Created_At timestamp not null,
+    Updated_At timestamp not null,
+    airline_id bigint references airline (id) not null,
+    departing_airport bigint references airport (id) not null,
+    arriving_airport bigint references airport (id) not null
+  );
+
+create table no_fly_list (
+  id SERIAL primary key,
+  active_from date not null,
+  active_to date not null,
+  no_fly_reason varchar(255),
+  Created_At timestamp not null,
+  Updated_At timestamp not null,
+  psgnr_id bigint references passengers(id)
+);
+
+create table booking (
+  bookingid SERIAL primary key,
+  flight_id bigint not null,
+  status varchar(20) not null,
+  booking_platform varchar(20) not null,
+  Created_At timestamp not null,
+  Updated_At timestamp not null,
+  passenger_id bigint references passengers(id)
+);
+
+create table flight_manifest (
+  id SERIAL primary key,
+  Created_At timestamp not null,
+  Updated_At timestamp not null,
+  booking_id bigint references booking(bookingid),
+  flight_id bigint references flight(flight_id)
+);
+
+create table boarding_pass (
+  id SERIAL primary key,
+  qr_code varchar(65535) not null,
+  Created_At timestamp not null,
+  Updated_At timestamp not null,
+  booking_id bigint references booking(bookingid)
+);
+
+
+create table baggage (
+  id SERIAL primary key,
+  weight_in_kg decimal(4,2),
+  Created_At timestamp not null,
+  Updated_At timestamp not null,
+  booking_id bigint references booking(bookingid)
+);
+
+create table baggage_check (
+  id SERIAL primary key,
+  chech_result varchar(50) not null,
+  Created_At timestamp not null,
+  Updated_At timestamp not null,
+  booking_id bigint references booking(bookingid),
+  passanger_id bigint references passengers(id)
+);
