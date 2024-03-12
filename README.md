@@ -55,6 +55,6 @@ creating tables SQL code:
 
 <img width="443" alt="Screenshot 2024-03-12 at 4 58 29 AM" src="https://github.com/shaimaathu/Assignment-5/assets/155615972/201fc7d4-8075-42f2-b6cb-46cfd183ca0c">
 
-
 <br></br>
-**thank you!✨**
+
+**Thank you!✨**
